@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Attention-Based Neural-Augmented Kalman Filter for Legged Robot State Estimation">
-  <meta property="og:title" content="AttenNKF: Legged Robot State Estimation"/>
-  <meta property="og:description" content="Robust state estimation under foot slip using attention mechanism."/>
-  <meta property="og:url" content=""/>
-  <meta property="og:image" content="static/images/attennkf_structure.jpg" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
-  <meta name="twitter:title" content="AttenNKF Project Page">
-  <meta name="twitter:description" content="Attention-Based Neural-Augmented Kalman Filter for Legged Robot State Estimation">
-  <meta name="twitter:image" content="static/images/attennkf_structure.jpg">
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
   <meta name="twitter:card" content="summary_large_image">
-
-  <meta name="keywords" content="Legged Robots, State Estimation, Kalman Filter, Attention Mechanism, Deep Learning">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
   <title>Attention-Based Neural-Augmented Kalman Filter for Legged Robot State Estimation</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
@@ -35,7 +42,7 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
-    <script type="text/javascript">
+  <script type="text/javascript">
     window.MathJax = {
       tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
@@ -44,43 +51,75 @@
       svg: { fontCache: 'global' }
     };
   </script>
+  <!-- ② MathJax 로더: 반드시 설정 스크립트 아래에 -->
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
 </head>
+
 <body>
+
 
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Attention-Based Neural-Augmented Kalman Filter for Legged Robot State Estimation</h1>
+            <h1 class="title is-1 publication-title">Attention-Based Neural-Augmented Kalman Filter for Legged Robot
+              State Estimation</h1>
             <div class="is-size-5 publication-authors">
-              <span class="author-block">Seokju Lee,</span>
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://seokju-lee.github.io/" target="_blank">Seokju Lee</a>,</span>
               <span class="author-block">Kyung-Soo Kim</span>
             </div>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block">Mechatronics, Systems and Control Lab, KAIST<br>IEEE Robotics and Automation Letters (RA-L)</span>
+              <span class="author-block">Mechatronics, Systems and Control Lab, Korea Advanced Institute of Science and
+                Technology (KAIST)<br>Under Review</span>
             </div>
 
             <div class="column has-text-centered">
               <div class="publication-links">
+                <!-- Arxiv PDF link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/xxxx.xxxxx" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <a href="https://arxiv.org/pdf/2503.00344" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
                     <span>Paper</span>
                   </a>
                 </span>
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/xxxx.xxxxx" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="ai ai-arxiv"></i></span>
-                    <span>arXiv</span>
-                  </a>
+
+                <!-- Supplementary PDF link -->
+                <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a> -->
                 </span>
+
+                <!-- Github link -->
+                <!-- <span class="link-block">
+                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a> -->
+                </span>
+
+                <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://youtu.be/pMtZH1zUenI" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="fab fa-youtube"></i></span>
-                    <span>Video</span>
+                  <a href="https://arxiv.org/abs/2503.00344" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
                   </a>
                 </span>
               </div>
@@ -91,24 +130,31 @@
     </div>
   </section>
 
+
+  <!-- Teaser video-->
   <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
+        <!-- Paper video. -->
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
+
             <div class="publication-video">
-              <video poster="" id="teaser" autoplay controls muted loop playsinline height="100%">
-                <source src="static/images/teaser_video.mp4" type="video/mp4">
-              </video>
+              <!-- Youtube embed code here -->
+              <iframe src="https://youtu.be/pMtZH1zUenI" frameborder="0" allow="autoplay; encrypted-media"
+                allowfullscreen></iframe>
             </div>
             <h2 class="subtitle has-text-centered">
-              AttenNKF robustly estimates the robot state even on slippery terrains like Teflon sheets and gravel by compensating for slip-induced errors.
+              Supplementary Video of the Paper
             </h2>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <!-- End teaser video -->
+
+  <!-- Paper abstract -->
   <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -116,25 +162,59 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              In this letter, we propose an <strong>Attention-Based Neural-Augmented Kalman Filter (AttenNKF)</strong> for state estimation in legged robots. Foot slip is a major source of estimation error: when slip occurs, kinematic measurements violate the no-slip assumption and inject bias during the update step. Our objective is to estimate this slip-induced error and compensate for it.
-            </p>
-            <p>
-              To this end, we augment an Invariant Extended Kalman Filter (InEKF) with a neural compensator that uses an <strong>attention mechanism</strong> to infer error conditioned on foot-slip severity and then applies this estimate as a post-update compensation to the InEKF state. The compensator is trained in a latent space, which aims to reduce sensitivity to raw input scales and encourages structured slip-conditioned compensations, while preserving the InEKF recursion. Experiments demonstrate improved performance compared to existing legged-robot state estimators, particularly under slip-prone conditions.
+              In this letter, we propose an Attention-Based Neural-Augmented Kalman Filter (AttenNKF) for state
+              estimation in legged robots. Foot slip is a major source of estimation error: when slip occurs, kinematic
+              measurements violate the no-slip assumption and inject bias during the update step. Our objective is to
+              estimate this slip-induced error and compensate for it. To this end, we augment an Invariant Extended
+              Kalman Filter (InEKF) with a neural compensator that uses an attention mechanism to infer error
+              conditioned on foot-slip severity and then applies this estimate as a post-update compensation to the
+              InEKF state (i.e., after the filter update). The compensator is trained in a latent space, which aims to
+              reduce sensitivity to raw input scales and encourages structured slip-conditioned compensations, while
+              preserving the InEKF recursion. Experiments demonstrate improved performance compared to existing
+              legged-robot state estimators, particularly under slip-prone conditions.
             </p>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <!-- End paper abstract -->
+
+
+  <!-- System Overview -->
   <section class="section">
     <div class="container">
-      <h2 class="title is-3 has-text-centered">Motivation: Slip & Error Correlation</h2>
+      <h2 class="title is-3 has-text-centered">Training Process</h2>
+      <div class="columns is-centered">
+        <div class="column is-two-thirds">
+          <figure class="image">
+            <img src="static/images/innkf_architecture.jpg" alt="System Overview Diagram"
+              style="max-width: 100%; height: auto;">
+            <figcaption class="has-text-centered is-size-7 mt-2">
+              Training process of the Neural Compensator. It consists of two steps: Step 1 corresponds to autoencoder
+              training, and Step 2 represents attention mechanism training. The snowflake symbol indicates a frozen
+              model, while the fire symbol denotes a fine-tuned component.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SE₂(3) Group Generation Network Architecture -->
+  <section class="section">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">
+        AttenNKF Architecture
+      </h2>
       <div class="columns is-centered">
         <div class="column is-half">
           <figure class="image">
-            <img src="static/images/correlation.jpg" alt="Slip vs Error">
+            <img src="static/images/se3_ggn.jpg" alt="SEGGN Architecture Diagram">
             <figcaption class="has-text-centered is-size-7 mt-2">
-              <strong>Figure 1.</strong> Relationship between foot slip level and normalized state estimation errors. The strong positive correlation ($r=0.68$) justifies using foot slip level as an explicit context variable for the compensator.
+              Structure of the AttenNKF. The Neural Compensator, composed of the Encoder-Decoder and Attention modules,
+              is augmented into the InEKF to generate the compensated state.
             </figcaption>
           </figure>
         </div>
@@ -144,25 +224,31 @@
 
   <section class="section">
     <div class="container">
-      <h2 class="title is-3 has-text-centered">AttenNKF Architecture</h2>
-      
+      <h2 class="title is-3 has-text-centered">
+        Training Process &amp; SEGGN Result
+      </h2>
       <div class="columns is-centered">
-        <div class="column is-two-thirds">
+        <!-- 왼쪽: Training Process -->
+        <div class="column is-one-third">
           <figure class="image">
             <img src="static/images/training_process.jpg" alt="Training Process">
             <figcaption class="has-text-centered is-size-7 mt-2">
-              <strong>Figure 2.</strong> Training process of the Neural Compensator. <strong>Step 1:</strong> Autoencoder training for Slip, InEKF state, and Error. <strong>Step 2:</strong> Attention mechanism training in latent space. The slip latent acts as the <em>query</em>, while the InEKF latent acts as the <em>key/value</em>.
+              Training process of the Neural Compensator (NC): The dataset is collected in 50 time-step sequences, where
+              state estimates are obtained at each time step using the InEKF. The right-invariant error is computed and
+              labeled only for the final time step. Based on this labeled error, the SEGGN is then trained using the
+              output and a loss function.
             </figcaption>
           </figure>
         </div>
-      </div>
-
-      <div class="columns is-centered mt-5">
-        <div class="column is-two-thirds">
+        <!-- 오른쪽: SEGGN Result -->
+        <div class="column is-one-third">
           <figure class="image">
-            <img src="static/images/attennkf.jpg" alt="AttenNKF Structure">
+            <img src="static/images/seggn_result.jpg" alt="SEGGN Result">
             <figcaption class="has-text-centered is-size-7 mt-2">
-              <strong>Figure 3.</strong> Structure of the AttenNKF. The Neural Compensator (AttenNC) post-processes the InEKF posterior with a slip-aware compensation. Unlike simple concatenation, the Cross-Attention module modulates the InEKF latent features based on the slip context.
+              The visual and numerical results of the trained SEGGN. The first row illustrates the transformed
+              coordinates based on the SEGGN output. The second row presents numerical evaluations, including the
+              Frobenius norm error, calculated as $||\textbf{R}^\top\textbf{R} - \textbf{I}||_F$, and the determinant of
+              \textbf{R}, both shown as histograms.
             </figcaption>
           </figure>
         </div>
@@ -172,36 +258,17 @@
 
   <section class="section">
     <div class="container">
-      <h2 class="title is-3 has-text-centered">Experimental Results</h2>
-      
+      <h2 class="title is-3 has-text-centered">
+        Position Estimation Results
+      </h2>
       <div class="columns is-centered">
         <div class="column is-two-thirds">
           <figure class="image">
-            <img src="static/images/indoor_exp.jpg" alt="Indoor Setup">
+            <img src="static/images/position_result.jpg" alt="Position Result">
             <figcaption class="has-text-centered is-size-7 mt-2">
-              <strong>Figure 4.</strong> Indoor experimental environment consisting of: (1) Gravel field, (2) Teflon sheet ($\mu \approx 0.15$), and (3) Stairs. These terrains were chosen to induce frequent foot slip.
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <div class="columns is-centered mt-5">
-        <div class="column is-four-fifths">
-          <figure class="image">
-            <img src="static/images/indoor_result.jpg" alt="Indoor Results">
-            <figcaption class="has-text-centered is-size-7 mt-2">
-              <strong>Figure 5.</strong> Indoor state estimation results. <strong>AttenNKF (Red)</strong> demonstrates significantly reduced drift compared to InEKF (Blue), Slip Rejection (Green), and Learned Contact (Orange), especially on the Teflon sheet and gravel.
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <div class="columns is-centered mt-5">
-        <div class="column is-two-thirds">
-          <figure class="image">
-            <img src="static/images/outdoor_exp.jpg" alt="Outdoor Results">
-            <figcaption class="has-text-centered is-size-7 mt-2">
-              <strong>Figure 6.</strong> Outdoor experiment on a 100m grass field. The proposed method (AttenNKF) maintains low vertical drift compared to baselines over a long-distance trajectory.
+              Position estimation results across four terrains (stairs, slope, uneven terrain, discrete obstacle) over a
+              time interval of 0 - 140 s. The solid black line represents the ground truth, the blue dashed line
+              represents InEKF, and the red dashed line represents the InNKF (proposed method).
             </figcaption>
           </figure>
         </div>
@@ -209,33 +276,167 @@
     </div>
   </section>
 
+  <section class="section">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">
+        Absoulte Trajectory Error (ATE) Results
+      </h2>
+      <div class="columns is-centered">
+        <div class="column is-one-third">
+          <figure class="image">
+            <img src="static/images/ate.png" alt="Position Result">
+            <figcaption class="has-text-centered is-size-7 mt-2">
+              Comparison of Absolute Trajectory Error (ATE) in state estimation among the three baselines and InNKF
+              (proposed method) across different terrains.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">
+        Raisim Result 1
+      </h2>
+      <div class="columns is-centered">
+        <div class="column is-two-thirds">
+          <figure class="image">
+            <img src="static/images/raisim_screenshot.jpg" alt="Raisim Result 1">
+            <figcaption class="has-text-centered is-size-7 mt-2">
+              State estimation results in Raisim for two laps around a 20 m $\times$ 20 m square path on field terrain.
+              The black line represents the ground truth, the blue line represents InEKF, and the red line represents
+              InNKF (proposed). (a): Bird's-eye view, (b): Side view.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">
+        Raisim Result 2
+      </h2>
+      <div class="columns is-centered">
+        <div class="column is-half">
+          <figure class="image">
+            <img src="static/images/raisim_result_.jpg" alt="Raisim Result 2">
+            <figcaption class="has-text-centered is-size-7 mt-2">
+              Relative Errors (RE) in Raisim across different environments (indoor, field, mountain, hill). In each box,
+              blue represents InEKF, green represents NN, and red represents InNKF (proposed).
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* 1) 컬럼을 세로 flex container 로 */
+    .align-captions .column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 2) figure도 세로 flex, caption은 밑으로 고정 */
+    .align-captions .column figure {
+      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .align-captions .column figcaption {
+      margin-top: auto;
+      padding-top: 0.5rem;
+    }
+
+    /* 3) 오른쪽만 약간 내려주기 */
+    .align-captions .column:nth-child(2) figure {
+      margin-top: 2rem;
+    }
+
+    /* 4) 이미지: 원본 비율 유지 */
+    .align-captions .column figure img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Real-World Experiment</h2>
+      <div class="columns is-centered align-captions">
+        <!-- 왼쪽 그림 -->
+        <div class="column is-one-third">
+          <figure>
+            <img src="static/images/indoor2.jpg" alt="Indoor">
+            <figcaption class="has-text-centered is-size-7">
+              Real-world experimental setup with gravel, wooden planks, and a cart to create unstructured terrain.
+            </figcaption>
+          </figure>
+        </div>
+        <!-- 오른쪽 그림: margin-top 으로 살짝 내림 -->
+        <div class="column is-one-third">
+          <figure>
+            <img src="static/images/real.png" alt="Real Result">
+            <figcaption class="has-text-centered is-size-7">
+              ATE and 10 Seconds RE (Mean and Standard Deviation) of state estimation in the real world.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@article{lee2025attennkf,
-  title={Attention-Based Neural-Augmented Kalman Filter for Legged Robot State Estimation},
-  author={Lee, Seokju and Kim, Kyung-Soo},
-  journal={IEEE Robotics and Automation Letters (RA-L)},
-  year={2025},
-  note={Submitted}
+      <pre><code>@article{lee2025legged,
+  title={Legged Robot State Estimation Using Invariant Neural-Augmented Kalman Filter with a Neural Compensator},
+  author={Lee, Seokju and Kim, Hyun-Bin and Kim, Kyung-Soo},
+  journal={arXiv preprint arXiv:2503.00344},
+  year={2025}
 }</code></pre>
     </div>
   </section>
+  <!--End BibTex citation -->
+
 
   <footer class="footer">
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-8">
           <div class="content">
+
             <p>
-              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
-              <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the
+              footer. <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
             </p>
+
           </div>
         </div>
       </div>
     </div>
   </footer>
 
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
 </body>
+
 </html>
