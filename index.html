@@ -181,19 +181,104 @@
   <!-- End paper abstract -->
 
 
-  <!-- System Overview -->
   <section class="section">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">Training Process</h2>
-      <div class="columns is-centered">
-        <div class="column is-two-thirds">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Method: Slip as Context</h2>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <h3 class="title is-4">Overall Architecture</h3>
           <figure class="image">
-            <img src="static/images/innkf_architecture.jpg" alt="System Overview Diagram"
+            <img src="static/images/figure3.png" alt="AttenNKF Architecture" style="max-width: 100%; height: auto;">
+            <figcaption class="content has-text-justified is-size-6 mt-3">
+              <strong>Figure 1. Structure of the AttenNKF.</strong> The system augments a standard InEKF with a Neural
+              Compensator (NC).
+              Unlike traditional methods that simply concatenate inputs, our NC uses an <strong>Attention
+                Mechanism</strong> where the <em>Foot Slip Level</em> acts as a context (Query) to modulate the
+              <em>InEKF State History</em> (Key/Value). This allows the filter to adaptively compensate for errors based
+              on the severity of the slip.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <br><br>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <h3 class="title is-4">Training Process</h3>
+          <figure class="image">
+            <img src="static/images/figure2.png" alt="Training Process" style="max-width: 100%; height: auto;">
+            <figcaption class="content has-text-justified is-size-6 mt-3">
+              <strong>Figure 2. Training pipeline of the Neural Compensator.</strong> The training consists of two
+              stages:
+              <ul style="text-align: left;">
+                <li><strong>Step 1 (Autoencoder):</strong> Compresses the Foot Slip Level, InEKF State, and Error into
+                  latent spaces using GRU-based autoencoders.</li>
+                <li><strong>Step 2 (Attention):</strong> Trains the Cross-Attention module. The <em>Slip Latent</em> is
+                  used as the Query, while the <em>InEKF Latent</em> provides Keys and Values. This generates a
+                  slip-conditioned compensation latent vector.</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Experimental Setup</h2>
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <figure class="image">
+            <img src="static/images/figure4.png" alt="Experimental Environment" style="max-width: 100%; height: auto;">
+            <figcaption class="has-text-centered is-size-6 mt-3">
+              <strong>Figure 3. Real-world indoor experimental environment.</strong>
+              The setup includes: (1) a <strong>Gravel field</strong> (30mm pebbles) to induce noise, (2) a
+              <strong>Teflon sheet</strong> ($\mu \approx 0.15$) to simulate ice-like slippery surfaces, and (3)
+              <strong>Stairs</strong> for dynamic locomotion tests.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Indoor Evaluation: Robustness to Slip</h2>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h4 class="title is-5">Performance on Slippery Teflon Sheet</h4>
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" frameborder="0"
+              allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+          <p class="is-size-6 mt-2">
+            Comparison video on the low-friction Teflon sheet. Note how the baseline (InEKF) drifts significantly due to
+            foot slip, whereas <strong>AttenNKF</strong> maintains its position estimate.
+          </p>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <figure class="image">
+            <img src="static/images/figure5.png" alt="Indoor Experimental Results"
               style="max-width: 100%; height: auto;">
-            <figcaption class="has-text-centered is-size-7 mt-2">
-              Training process of the Neural Compensator. It consists of two steps: Step 1 corresponds to autoencoder
-              training, and Step 2 represents attention mechanism training. The snowflake symbol indicates a frozen
-              model, while the fire symbol denotes a fine-tuned component.
+            <figcaption class="content has-text-justified is-size-6 mt-3">
+              <strong>Figure 4. State estimation results of indoor experiments.</strong>
+              <br>
+              <strong>Left:</strong> Trajectories on the x-y plane.
+              <strong>Right:</strong> Time histories of estimated states ($x, y, z$). Background shading denotes foot
+              slip level.
+              <br>
+              AttenNKF (Red) aligns closely with Ground Truth (Black), significantly outperforming SR, LC, and InEKF
+              baselines, especially on the Teflon sheet where slip is severe.
             </figcaption>
           </figure>
         </div>
@@ -201,209 +286,44 @@
     </div>
   </section>
 
-
-  <!-- SE₂(3) Group Generation Network Architecture -->
   <section class="section">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">
-        AttenNKF Architecture
-      </h2>
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Outdoor Long-Distance Experiment</h2>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/YOUR_OUTDOOR_VIDEO_ID" frameborder="0"
+              allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
       <div class="columns is-centered">
-        <div class="column is-half">
+        <div class="column is-full">
           <figure class="image">
-            <img src="static/images/se3_ggn.jpg" alt="SEGGN Architecture Diagram">
-            <figcaption class="has-text-centered is-size-7 mt-2">
-              Structure of the AttenNKF. The Neural Compensator, composed of the Encoder-Decoder and Attention modules,
-              is augmented into the InEKF to generate the compensated state.
+            <img src="static/images/figure6.png" alt="Outdoor Experimental Results"
+              style="max-width: 100%; height: auto;">
+            <figcaption class="content has-text-justified is-size-6 mt-3">
+              <strong>Figure 5. Outdoor experiment results (~100m trajectory).</strong>
+              <br>
+              <strong>Top:</strong> Trajectory overlaid on a satellite map.
+              <strong>Bottom:</strong> Estimated vertical position ($z$) over time.
+              <br>
+              Existing methods accumulate up to 10m of vertical drift over 250s. <strong>AttenNKF</strong> effectively
+              suppresses this drift, maintaining errors within $\pm 2-3$m on deformable grass terrain.
             </figcaption>
           </figure>
         </div>
       </div>
     </div>
   </section>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">
-        Training Process &amp; SEGGN Result
-      </h2>
-      <div class="columns is-centered">
-        <!-- 왼쪽: Training Process -->
-        <div class="column is-one-third">
-          <figure class="image">
-            <img src="static/images/training_process.jpg" alt="Training Process">
-            <figcaption class="has-text-centered is-size-7 mt-2">
-              Training process of the Neural Compensator (NC): The dataset is collected in 50 time-step sequences, where
-              state estimates are obtained at each time step using the InEKF. The right-invariant error is computed and
-              labeled only for the final time step. Based on this labeled error, the SEGGN is then trained using the
-              output and a loss function.
-            </figcaption>
-          </figure>
-        </div>
-        <!-- 오른쪽: SEGGN Result -->
-        <div class="column is-one-third">
-          <figure class="image">
-            <img src="static/images/seggn_result.jpg" alt="SEGGN Result">
-            <figcaption class="has-text-centered is-size-7 mt-2">
-              The visual and numerical results of the trained SEGGN. The first row illustrates the transformed
-              coordinates based on the SEGGN output. The second row presents numerical evaluations, including the
-              Frobenius norm error, calculated as $||\textbf{R}^\top\textbf{R} - \textbf{I}||_F$, and the determinant of
-              \textbf{R}, both shown as histograms.
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">
-        Position Estimation Results
-      </h2>
-      <div class="columns is-centered">
-        <div class="column is-two-thirds">
-          <figure class="image">
-            <img src="static/images/position_result.jpg" alt="Position Result">
-            <figcaption class="has-text-centered is-size-7 mt-2">
-              Position estimation results across four terrains (stairs, slope, uneven terrain, discrete obstacle) over a
-              time interval of 0 - 140 s. The solid black line represents the ground truth, the blue dashed line
-              represents InEKF, and the red dashed line represents the InNKF (proposed method).
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">
-        Absoulte Trajectory Error (ATE) Results
-      </h2>
-      <div class="columns is-centered">
-        <div class="column is-one-third">
-          <figure class="image">
-            <img src="static/images/ate.png" alt="Position Result">
-            <figcaption class="has-text-centered is-size-7 mt-2">
-              Comparison of Absolute Trajectory Error (ATE) in state estimation among the three baselines and InNKF
-              (proposed method) across different terrains.
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">
-        Raisim Result 1
-      </h2>
-      <div class="columns is-centered">
-        <div class="column is-two-thirds">
-          <figure class="image">
-            <img src="static/images/raisim_screenshot.jpg" alt="Raisim Result 1">
-            <figcaption class="has-text-centered is-size-7 mt-2">
-              State estimation results in Raisim for two laps around a 20 m $\times$ 20 m square path on field terrain.
-              The black line represents the ground truth, the blue line represents InEKF, and the red line represents
-              InNKF (proposed). (a): Bird's-eye view, (b): Side view.
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">
-        Raisim Result 2
-      </h2>
-      <div class="columns is-centered">
-        <div class="column is-half">
-          <figure class="image">
-            <img src="static/images/raisim_result_.jpg" alt="Raisim Result 2">
-            <figcaption class="has-text-centered is-size-7 mt-2">
-              Relative Errors (RE) in Raisim across different environments (indoor, field, mountain, hill). In each box,
-              blue represents InEKF, green represents NN, and red represents InNKF (proposed).
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <style>
-    /* 1) 컬럼을 세로 flex container 로 */
-    .align-captions .column {
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* 2) figure도 세로 flex, caption은 밑으로 고정 */
-    .align-captions .column figure {
-      flex: 1 0 auto;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .align-captions .column figcaption {
-      margin-top: auto;
-      padding-top: 0.5rem;
-    }
-
-    /* 3) 오른쪽만 약간 내려주기 */
-    .align-captions .column:nth-child(2) figure {
-      margin-top: 2rem;
-    }
-
-    /* 4) 이미지: 원본 비율 유지 */
-    .align-captions .column figure img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-  </style>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">Real-World Experiment</h2>
-      <div class="columns is-centered align-captions">
-        <!-- 왼쪽 그림 -->
-        <div class="column is-one-third">
-          <figure>
-            <img src="static/images/indoor2.jpg" alt="Indoor">
-            <figcaption class="has-text-centered is-size-7">
-              Real-world experimental setup with gravel, wooden planks, and a cart to create unstructured terrain.
-            </figcaption>
-          </figure>
-        </div>
-        <!-- 오른쪽 그림: margin-top 으로 살짝 내림 -->
-        <div class="column is-one-third">
-          <figure>
-            <img src="static/images/real.png" alt="Real Result">
-            <figcaption class="has-text-centered is-size-7">
-              ATE and 10 Seconds RE (Mean and Standard Deviation) of state estimation in the real world.
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-
 
   <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@article{lee2025legged,
-  title={Legged Robot State Estimation Using Invariant Neural-Augmented Kalman Filter with a Neural Compensator},
-  author={Lee, Seokju and Kim, Hyun-Bin and Kim, Kyung-Soo},
-  journal={arXiv preprint arXiv:2503.00344},
-  year={2025}
-}</code></pre>
+      <pre><code>Coming Soon</code></pre>
     </div>
   </section>
   <!--End BibTex citation -->
