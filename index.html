@@ -3,25 +3,20 @@
 
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
-  <meta property="og:url" content="URL OF THE WEBSITE" />
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta name="description" content="Attention-Based Neural-Augmented Kalman Filter for Legged Robot State Estimation">
+  <meta property="og:title" content="AttenNKF Project Page" />
+  <meta property="og:description"
+    content="Attention-Based Neural-Augmented Kalman Filter for Legged Robot State Estimation" />
+  <meta property="og:url" content="https://seokju-lee.github.io/attennkf" />
+  <meta property="og:image" content="static/images/your_banner_image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
-
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:title" content="AttenNKF">
+  <meta name="twitter:description" content="Attention-Based Neural-Augmented Kalman Filter">
   <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="keywords" content="Legged Robots, State Estimation, Kalman Filter, Attention Mechanism">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -51,7 +46,6 @@
       svg: { fontCache: 'global' }
     };
   </script>
-  <!-- ② MathJax 로더: 반드시 설정 스크립트 아래에 -->
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
 </head>
 
@@ -66,7 +60,6 @@
             <h1 class="title is-1 publication-title">Attention-Based Neural-Augmented Kalman Filter for Legged Robot
               State Estimation</h1>
             <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
               <span class="author-block">
                 <a href="https://seokju-lee.github.io/" target="_blank">Seokju Lee</a>,</span>
               <span class="author-block">Kyung-Soo Kim</span>
@@ -79,49 +72,6 @@
 
             <div class="column has-text-centered">
               <div class="publication-links">
-                <!-- Arxiv PDF link -->
-                <!-- <span class="link-block">
-                  <a href="https://arxiv.org/pdf/2503.00344" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span> -->
-
-                <!-- Supplementary PDF link -->
-                <!-- <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a> -->
-                <!-- </span> -->
-
-                <!-- Github link -->
-                <!-- <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a> -->
-                <!-- </span> -->
-
-                <!-- ArXiv abstract Link -->
-                <!-- <span class="link-block">
-                  <a href="https://arxiv.org/abs/2503.00344" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span> -->
               </div>
             </div>
           </div>
@@ -131,16 +81,12 @@
   </section>
 
 
-  <!-- Teaser video-->
   <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
-        <!-- Paper video. -->
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
-
             <div class="publication-video">
-              <!-- Youtube embed code here -->
               <iframe src="https://youtu.be/pMtZH1zUenI" frameborder="0" allow="autoplay; encrypted-media"
                 allowfullscreen></iframe>
             </div>
@@ -152,9 +98,6 @@
       </div>
     </div>
   </section>
-  <!-- End teaser video -->
-
-  <!-- Paper abstract -->
   <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -178,9 +121,6 @@
       </div>
     </div>
   </section>
-  <!-- End paper abstract -->
-
-
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Method: Slip as Context</h2>
@@ -189,14 +129,14 @@
         <div class="column is-full">
           <h3 class="title is-4">Overall Architecture</h3>
           <figure class="image">
-            <img src="static/images/figure3.jpg" alt="AttenNKF Architecture" style="max-width: 100%; height: auto;">
-            <figcaption class="content has-text-justified is-size-6 mt-3">
+            <img src="static/images/figure3.jpg" alt="AttenNKF Architecture"
+              style="max-width: 60%; height: auto; display: block; margin: 0 auto;">
+            <figcaption class="content has-text-justified is-size-6 mt-3" style="max-width: 80%; margin: 0 auto;">
               <strong>Figure 1. Structure of the AttenNKF.</strong> The system augments a standard InEKF with a Neural
-              Compensator (NC).
-              Unlike traditional methods that simply concatenate inputs, our NC uses an <strong>Attention
+              Compensator (NC). Unlike traditional methods that simply concatenate inputs, our NC uses an
+              <strong>Attention
                 Mechanism</strong> where the <em>Foot Slip Level</em> acts as a context (Query) to modulate the
-              <em>InEKF State History</em> (Key/Value). This allows the filter to adaptively compensate for errors based
-              on the severity of the slip.
+              <em>InEKF State History</em> (Key/Value).
             </figcaption>
           </figure>
         </div>
@@ -208,8 +148,9 @@
         <div class="column is-full">
           <h3 class="title is-4">Training Process</h3>
           <figure class="image">
-            <img src="static/images/figure2.jpg" alt="Training Process" style="max-width: 100%; height: auto;">
-            <figcaption class="content has-text-justified is-size-6 mt-3">
+            <img src="static/images/figure2.jpg" alt="Training Process"
+              style="max-width: 60%; height: auto; display: block; margin: 0 auto;">
+            <figcaption class="content has-text-justified is-size-6 mt-3" style="max-width: 80%; margin: 0 auto;">
               <strong>Figure 2. Training pipeline of the Neural Compensator.</strong> The training consists of two
               stages:
               <ul style="text-align: left;">
@@ -232,7 +173,8 @@
       <div class="columns is-centered">
         <div class="column is-four-fifths">
           <figure class="image">
-            <img src="static/images/figure4.jpg" alt="Experimental Environment" style="max-width: 100%; height: auto;">
+            <img src="static/images/figure4.jpg" alt="Experimental Environment"
+              style="max-width: 60%; height: auto; display: block; margin: 0 auto;">
             <figcaption class="has-text-centered is-size-6 mt-3">
               <strong>Figure 3. Real-world indoor experimental environment.</strong>
               The setup includes: (1) a <strong>Gravel field</strong> (30mm pebbles) to induce noise, (2) a
@@ -247,19 +189,47 @@
 
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Indoor Evaluation: Robustness to Slip</h2>
+      <h2 class="title is-3 has-text-centered">Indoor & OOD Evaluation</h2>
+      <div class="content has-text-centered mb-5">
+        <p>
+          Comparisons of <strong>AttenNKF (Red)</strong> vs. Baselines (InEKF, SR, LC) across different terrains.
+          <br>AttenNKF shows robust performance even in high-slip environments.
+        </p>
+      </div>
 
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h4 class="title is-5">Performance on Slippery Teflon Sheet</h4>
-          <div class="publication-video">
-            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" frameborder="0"
-              allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-          <p class="is-size-6 mt-2">
-            Comparison video on the low-friction Teflon sheet. Note how the baseline (InEKF) drifts significantly due to
-            foot slip, whereas <strong>AttenNKF</strong> maintains its position estimate.
-          </p>
+      <div class="columns is-centered">
+        <div class="column is-5 has-text-centered">
+          <h4 class="title is-5">Gravel Field</h4>
+          <video poster="" autoplay controls muted loop playsinline width="100%">
+            <source src="static/videos/gravel.mp4" type="video/mp4">
+          </video>
+          <p class="is-size-7 mt-1">Loose pebbles (30mm)</p>
+        </div>
+
+        <div class="column is-5 has-text-centered">
+          <h4 class="title is-5">Teflon Sheet ($\mu \approx 0.15$)</h4>
+          <video poster="" autoplay controls muted loop playsinline width="100%">
+            <source src="static/videos/teflon.mp4" type="video/mp4">
+          </video>
+          <p class="is-size-7 mt-1">High-slip surface</p>
+        </div>
+      </div>
+
+      <div class="columns is-centered mt-4">
+        <div class="column is-5 has-text-centered">
+          <h4 class="title is-5">Stairs</h4>
+          <video poster="" autoplay controls muted loop playsinline width="100%">
+            <source src="static/videos/stairs.mp4" type="video/mp4">
+          </video>
+          <p class="is-size-7 mt-1">Dynamic locomotion</p>
+        </div>
+
+        <div class="column is-5 has-text-centered">
+          <h4 class="title is-5">OOD: Soft Terrain</h4>
+          <video poster="" autoplay controls muted loop playsinline width="100%">
+            <source src="static/videos/ood_soft.mp4" type="video/mp4">
+          </video>
+          <p class="is-size-7 mt-1"><strong>Out-of-Distribution</strong> (Unseen)</p>
         </div>
       </div>
 
@@ -269,16 +239,15 @@
         <div class="column is-full">
           <figure class="image">
             <img src="static/images/figure5.jpg" alt="Indoor Experimental Results"
-              style="max-width: 100%; height: auto;">
-            <figcaption class="content has-text-justified is-size-6 mt-3">
+              style="max-width: 80%; height: auto; display: block; margin: 0 auto;">
+            <figcaption class="content has-text-justified is-size-6 mt-3" style="max-width: 90%; margin: 0 auto;">
               <strong>Figure 4. State estimation results of indoor experiments.</strong>
               <br>
               <strong>Left:</strong> Trajectories on the x-y plane.
-              <strong>Right:</strong> Time histories of estimated states ($x, y, z$). Background shading denotes foot
-              slip level.
+              <strong>Right:</strong> Time histories of estimated states ($x, y, z$).
               <br>
               AttenNKF (Red) aligns closely with Ground Truth (Black), significantly outperforming SR, LC, and InEKF
-              baselines, especially on the Teflon sheet where slip is severe.
+              baselines.
             </figcaption>
           </figure>
         </div>
@@ -286,32 +255,34 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section hero is-light">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Outdoor Long-Distance Experiment</h2>
 
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <div class="publication-video">
-            <iframe src="https://www.youtube.com/embed/YOUR_OUTDOOR_VIDEO_ID" frameborder="0"
-              allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
+          <video poster="" autoplay controls muted loop playsinline width="100%"
+            style="border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+            <source src="static/videos/outdoor.mp4" type="video/mp4">
+          </video>
+          <p class="content has-text-justified mt-3">
+            The robot traversed approximately <strong>100m</strong> on deformable grass terrain.
+            While baselines accumulated up to 10m of vertical drift, <strong>AttenNKF</strong> maintained errors within
+            $\pm 2-3$m.
+          </p>
         </div>
       </div>
 
       <div class="columns is-centered">
         <div class="column is-full">
-          <figure class="image">
+          <figure class="image mt-4">
             <img src="static/images/figure6.jpg" alt="Outdoor Experimental Results"
-              style="max-width: 100%; height: auto;">
-            <figcaption class="content has-text-justified is-size-6 mt-3">
-              <strong>Figure 5. Outdoor experiment results (~100m trajectory).</strong>
+              style="max-width: 80%; height: auto; display: block; margin: 0 auto;">
+            <figcaption class="content has-text-justified is-size-6 mt-3" style="max-width: 90%; margin: 0 auto;">
+              <strong>Figure 5. Outdoor experiment results.</strong>
               <br>
               <strong>Top:</strong> Trajectory overlaid on a satellite map.
               <strong>Bottom:</strong> Estimated vertical position ($z$) over time.
-              <br>
-              Existing methods accumulate up to 10m of vertical drift over 250s. <strong>AttenNKF</strong> effectively
-              suppresses this drift, maintaining errors within $\pm 2-3$m on deformable grass terrain.
             </figcaption>
           </figure>
         </div>
@@ -319,43 +290,30 @@
     </div>
   </section>
 
-  <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>Coming Soon</code></pre>
     </div>
   </section>
-  <!--End BibTex citation -->
-
-
   <footer class="footer">
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-8">
           <div class="content">
-
             <p>
               This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
                 target="_blank">Academic Project Page Template</a> which was adopted from the <a
                 href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-              You are free to borrow the source code of this website, we just ask that you link back to this page in the
-              footer. <br> This website is licensed under a <a rel="license"
+              <br> This website is licensed under a <a rel="license"
                 href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
                 Commons Attribution-ShareAlike 4.0 International License</a>.
             </p>
-
           </div>
         </div>
       </div>
     </div>
   </footer>
-
-  <!-- Statcounter tracking code -->
-
-  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-  <!-- End of Statcounter Code -->
 
 </body>
 
