@@ -189,29 +189,38 @@
 
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Indoor & OOD Evaluation</h2>
+      <h2 class="title is-3 has-text-centered">Experimental Environments</h2>
       <div class="content has-text-centered mb-5">
         <p>
-          Comparisons of <strong>AttenNKF (Red)</strong> vs. Baselines (InEKF, SR, LC) across different terrains.
-          <br>AttenNKF shows robust performance even in high-slip environments.
+          We evaluated the proposed method across various terrain conditions to test robustness against slip and surface
+          deformation.
+          <br>The experiments were conducted in the following five environments.
         </p>
       </div>
 
       <div class="columns is-centered">
-        <div class="column is-5 has-text-centered">
+        <div class="column is-4 has-text-centered">
+          <h4 class="title is-5">Flat Ground</h4>
+          <video poster="" autoplay controls muted loop playsinline width="100%">
+            <source src="static/videos/flat.mp4" type="video/mp4">
+          </video>
+          <p class="is-size-7 mt-1">Nominal walking condition</p>
+        </div>
+
+        <div class="column is-4 has-text-centered">
           <h4 class="title is-5">Gravel Field</h4>
           <video poster="" autoplay controls muted loop playsinline width="100%">
             <source src="static/videos/gravel.mp4" type="video/mp4">
           </video>
-          <p class="is-size-7 mt-1">Loose pebbles (30mm)</p>
+          <p class="is-size-7 mt-1">Noisy surface with 30mm pebbles</p>
         </div>
 
-        <div class="column is-5 has-text-centered">
-          <h4 class="title is-5">Teflon Sheet ($\mu \approx 0.15$)</h4>
+        <div class="column is-4 has-text-centered">
+          <h4 class="title is-5">Teflon Sheet</h4>
           <video poster="" autoplay controls muted loop playsinline width="100%">
             <source src="static/videos/teflon.mp4" type="video/mp4">
           </video>
-          <p class="is-size-7 mt-1">High-slip surface</p>
+          <p class="is-size-7 mt-1">Slippery surface ($\mu \approx 0.15$)</p>
         </div>
       </div>
 
@@ -221,15 +230,15 @@
           <video poster="" autoplay controls muted loop playsinline width="100%">
             <source src="static/videos/stairs.mp4" type="video/mp4">
           </video>
-          <p class="is-size-7 mt-1">Dynamic locomotion</p>
+          <p class="is-size-7 mt-1">Uneven terrain</p>
         </div>
 
         <div class="column is-5 has-text-centered">
-          <h4 class="title is-5">OOD: Soft Terrain</h4>
+          <h4 class="title is-5">Soft Terrain</h4>
           <video poster="" autoplay controls muted loop playsinline width="100%">
             <source src="static/videos/ood_soft.mp4" type="video/mp4">
           </video>
-          <p class="is-size-7 mt-1"><strong>Out-of-Distribution</strong> (Unseen)</p>
+          <p class="is-size-7 mt-1">Deformable surface (OOD)</p>
         </div>
       </div>
 
