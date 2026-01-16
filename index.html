@@ -189,32 +189,39 @@
 
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Experimental Environments</h2>
+      <h2 class="title is-3 has-text-centered">Experimental Environments & Trajectory</h2>
       <div class="content has-text-centered mb-5">
         <p>
-          We evaluated the proposed method across various terrain conditions to test robustness against slip and surface
-          deformation.
-          <br>The experiments were conducted in the following five environments.
+          We evaluated the proposed method across various terrain conditions.
+          <br>The experiments cover nominal walking, slippery/noisy surfaces, and long-term trajectory tracking.
         </p>
       </div>
 
       <div class="columns is-centered">
         <div class="column is-4 has-text-centered">
+          <h4 class="title is-5">Full Trajectory</h4>
+          <video poster="" autoplay controls muted loop playsinline width="100%">
+            <source src="static/videos/full_trajectory.mp4" type="video/mp4">
+          </video>
+          <p class="is-size-7 mt-1">Indoor trajectory</p>
+        </div>
+        <div class="column is-4 has-text-centered">
           <h4 class="title is-5">Flat Ground</h4>
           <video poster="" autoplay controls muted loop playsinline width="100%">
             <source src="static/videos/flat.mp4" type="video/mp4">
           </video>
-          <p class="is-size-7 mt-1">Nominal walking condition</p>
+          <p class="is-size-7 mt-1">Nominal walking</p>
         </div>
-
         <div class="column is-4 has-text-centered">
           <h4 class="title is-5">Gravel Field</h4>
           <video poster="" autoplay controls muted loop playsinline width="100%">
             <source src="static/videos/gravel.mp4" type="video/mp4">
           </video>
-          <p class="is-size-7 mt-1">Noisy surface with 30mm pebbles</p>
+          <p class="is-size-7 mt-1">Noisy surface (30mm pebbles)</p>
         </div>
+      </div>
 
+      <div class="columns is-centered mt-4">
         <div class="column is-4 has-text-centered">
           <h4 class="title is-5">Teflon Sheet</h4>
           <video poster="" autoplay controls muted loop playsinline width="100%">
@@ -222,18 +229,14 @@
           </video>
           <p class="is-size-7 mt-1">Slippery surface ($\mu \approx 0.15$)</p>
         </div>
-      </div>
-
-      <div class="columns is-centered mt-4">
-        <div class="column is-5 has-text-centered">
+        <div class="column is-4 has-text-centered">
           <h4 class="title is-5">Stairs</h4>
           <video poster="" autoplay controls muted loop playsinline width="100%">
             <source src="static/videos/stairs.mp4" type="video/mp4">
           </video>
           <p class="is-size-7 mt-1">Uneven terrain</p>
         </div>
-
-        <div class="column is-5 has-text-centered">
+        <div class="column is-4 has-text-centered">
           <h4 class="title is-5">Soft Terrain</h4>
           <video poster="" autoplay controls muted loop playsinline width="100%">
             <source src="static/videos/ood_soft.mp4" type="video/mp4">
@@ -242,25 +245,37 @@
         </div>
       </div>
 
-      <br>
+      <br><br>
+
+      <h3 class="title is-4 has-text-centered">Quantitative Results</h3>
+
+      <div class="columns is-centered is-vcentered">
+
+        <div class="column is-6 has-text-centered">
+          <figure class="image">
+            <img src="static/images/figure5.jpg" alt="Indoor Experimental Results" style="width: 100%; height: auto;">
+          </figure>
+        </div>
+
+        <div class="column is-6 has-text-centered">
+          <figure class="image">
+            <img src="static/images/table_results.jpg" alt="RMSE Comparison Table" style="width: 100%; height: auto;">
+          </figure>
+        </div>
+
+      </div>
 
       <div class="columns is-centered">
         <div class="column is-full">
-          <figure class="image">
-            <img src="static/images/figure5.jpg" alt="Indoor Experimental Results"
-              style="max-width: 80%; height: auto; display: block; margin: 0 auto;">
-            <figcaption class="content has-text-centered is-size-6 mt-3" style="max-width: 90%; margin: 0 auto;">
-              <strong>Figure 4. State estimation results of indoor experiments.</strong>
-              <br>
-              <strong>Left:</strong> Trajectories on the x-y plane.
-              <strong>Right:</strong> Time histories of estimated states ($x, y, z$).
-              <br>
-              AttenNKF (Red) aligns closely with Ground Truth (Black), significantly outperforming SR, LC, and InEKF
-              baselines.
-            </figcaption>
-          </figure>
+          <figcaption class="content has-text-centered is-size-6 mt-1">
+            <strong>Figure 4 & Table 1. State estimation performance.</strong>
+            (Left) Trajectories and state histories comparing AttenNKF with baselines.
+            (Right) RMSE comparison table showing that AttenNKF achieves the lowest drift, particularly in slippery and
+            noisy conditions.
+          </figcaption>
         </div>
       </div>
+
     </div>
   </section>
 
