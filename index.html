@@ -130,8 +130,8 @@
           <h3 class="title is-4">Overall Architecture</h3>
           <figure class="image">
             <img src="static/images/figure3.jpg" alt="AttenNKF Architecture"
-              style="max-width: 60%; height: auto; display: block; margin: 0 auto;">
-            <figcaption class="content has-text-justified is-size-6 mt-3" style="max-width: 80%; margin: 0 auto;">
+              style="max-width: 40%; height: auto; display: block; margin: 0 auto;">
+            <figcaption class="content has-text-centered is-size-6 mt-3" style="max-width: 60%; margin: 0 auto;">
               <strong>Figure 1. Structure of the AttenNKF.</strong> The system augments a standard InEKF with a Neural
               Compensator (NC). Unlike traditional methods that simply concatenate inputs, our NC uses an
               <strong>Attention
@@ -149,11 +149,11 @@
           <h3 class="title is-4">Training Process</h3>
           <figure class="image">
             <img src="static/images/figure2.jpg" alt="Training Process"
-              style="max-width: 60%; height: auto; display: block; margin: 0 auto;">
-            <figcaption class="content has-text-justified is-size-6 mt-3" style="max-width: 80%; margin: 0 auto;">
+              style="max-width: 80%; height: auto; display: block; margin: 0 auto;">
+            <figcaption class="content has-text-centered is-size-6 mt-3" style="max-width: 100%; margin: 0 auto;">
               <strong>Figure 2. Training pipeline of the Neural Compensator.</strong> The training consists of two
               stages:
-              <ul style="text-align: left;">
+              <ul style="text-align: left; display: inline-block; text-align: left;">
                 <li><strong>Step 1 (Autoencoder):</strong> Compresses the Foot Slip Level, InEKF State, and Error into
                   latent spaces using GRU-based autoencoders.</li>
                 <li><strong>Step 2 (Attention):</strong> Trains the Cross-Attention module. The <em>Slip Latent</em> is
@@ -240,7 +240,7 @@
           <figure class="image">
             <img src="static/images/figure5.jpg" alt="Indoor Experimental Results"
               style="max-width: 80%; height: auto; display: block; margin: 0 auto;">
-            <figcaption class="content has-text-justified is-size-6 mt-3" style="max-width: 90%; margin: 0 auto;">
+            <figcaption class="content has-text-centered is-size-6 mt-3" style="max-width: 90%; margin: 0 auto;">
               <strong>Figure 4. State estimation results of indoor experiments.</strong>
               <br>
               <strong>Left:</strong> Trajectories on the x-y plane.
@@ -265,7 +265,7 @@
             style="border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
             <source src="static/videos/outdoor.mp4" type="video/mp4">
           </video>
-          <p class="content has-text-justified mt-3">
+          <p class="content has-text-centered mt-3">
             The robot traversed approximately <strong>100m</strong> on deformable grass terrain.
             While baselines accumulated up to 10m of vertical drift, <strong>AttenNKF</strong> maintained errors within
             $\pm 2-3$m.
@@ -277,8 +277,8 @@
         <div class="column is-full">
           <figure class="image mt-4">
             <img src="static/images/figure6.jpg" alt="Outdoor Experimental Results"
-              style="max-width: 80%; height: auto; display: block; margin: 0 auto;">
-            <figcaption class="content has-text-justified is-size-6 mt-3" style="max-width: 90%; margin: 0 auto;">
+              style="max-width: 60%; height: auto; display: block; margin: 0 auto;">
+            <figcaption class="content has-text-centered is-size-6 mt-3" style="max-width: 90%; margin: 0 auto;">
               <strong>Figure 5. Outdoor experiment results.</strong>
               <br>
               <strong>Top:</strong> Trajectory overlaid on a satellite map.
